@@ -1,0 +1,77 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-198,-72",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port AXI_STREAM_TX -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD
+preplace port AXI_STREAM_RX -pg 1 -lvl 4 -x 1040 -y 240 -defaultsOSRD
+preplace port qsfp_clk -pg 1 -lvl 0 -x 0 -y 280 -defaultsOSRD
+preplace port qsfp_tx -pg 1 -lvl 4 -x 1040 -y 320 -defaultsOSRD
+preplace port qsfp_rx -pg 1 -lvl 0 -x 0 -y 300 -defaultsOSRD
+preplace port port-id_channel_up -pg 1 -lvl 4 -x 1040 -y 300 -defaultsOSRD
+preplace port port-id_clock -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 4 -x 1040 -y 260 -defaultsOSRD
+preplace port port-id_reset_in -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace portBus sys_reset_out -pg 1 -lvl 4 -x 1040 -y 280 -defaultsOSRD
+preplace portBus probe0 -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace inst aurora_core -pg 1 -lvl 2 -x 530 -y 260 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 24 18 19 20 21 22 23 17 25 26 27 28 29 30 31 35 33 36 32 37 38 39 34 40 41 42} -defaultsOSRD -pinDir USER_DATA_S_AXIS_TX left -pinY USER_DATA_S_AXIS_TX 0L -pinDir USER_DATA_M_AXIS_RX right -pinY USER_DATA_M_AXIS_RX 0R -pinDir GT_DIFF_REFCLK1 left -pinY GT_DIFF_REFCLK1 20L -pinDir CORE_STATUS right -pinY CORE_STATUS 20R -pinDir CORE_STATUS.channel_up right -pinY CORE_STATUS.channel_up 40R -pinDir CORE_CONTROL left -pinY CORE_CONTROL 60L -pinDir GT_SERIAL_TX right -pinY GT_SERIAL_TX 60R -pinDir GT_SERIAL_RX left -pinY GT_SERIAL_RX 40L -pinDir QPLL_CONTROL_OUT right -pinY QPLL_CONTROL_OUT 80R -pinDir reset_pb left -pinY reset_pb 80L -pinDir pma_init left -pinY pma_init 100L -pinDir tx_out_clk right -pinY tx_out_clk 140R -pinDir init_clk left -pinY init_clk 120L -pinDir link_reset_out right -pinY link_reset_out 160R -pinDir user_clk_out right -pinY user_clk_out 100R -pinDir sync_clk_out right -pinY sync_clk_out 180R -pinDir gt_qpllclk_quad1_out right -pinY gt_qpllclk_quad1_out 200R -pinDir gt_qpllrefclk_quad1_out right -pinY gt_qpllrefclk_quad1_out 220R -pinDir sys_reset_out right -pinY sys_reset_out 120R -pinDir gt_reset_out right -pinY gt_reset_out 240R -pinDir gt_refclk1_out right -pinY gt_refclk1_out 260R -pinBusDir gt_powergood right -pinBusY gt_powergood 280R
+preplace inst reset_inverter -pg 1 -lvl 2 -x 530 -y 140 -swap {1 0} -defaultsOSRD -pinBusDir Op1 right -pinBusY Op1 20R -pinBusDir Res right -pinBusY Res 0R
+preplace inst stream_signals -pg 1 -lvl 3 -x 900 -y 60 -swap {0 1 2 3 4 5 6 7 8 11 10 9} -defaultsOSRD -pinDir SLOT_0_AXIS left -pinY SLOT_0_AXIS 0L -pinDir SLOT_1_AXIS left -pinY SLOT_1_AXIS 40L -pinDir clk left -pinY clk 120L -pinDir resetn left -pinY resetn 80L -pinBusDir probe0 left -pinBusY probe0 60L
+preplace inst reset_delay -pg 1 -lvl 1 -x 160 -y 200 -swap {0 1 3 2} -defaultsOSRD -pinDir clock left -pinY clock 0L -pinDir reset_in left -pinY reset_in 20L -pinDir reset_out right -pinY reset_out 20R -pinDir resetn_out right -pinY resetn_out 0R
+preplace netloc reset_delay_0_reset_out 1 1 1 280 220n
+preplace netloc reset_inverter_Res 1 2 1 N 140
+preplace netloc aurora_core_channel_up1 1 2 2 NJ 300 NJ
+preplace netloc system_clock_IBUF_OUT 1 0 2 40 380 NJ
+preplace netloc aurora_core_user_clk_out 1 2 2 800 260 NJ
+preplace netloc aurora_core_sys_reset_out 1 2 2 760 280 NJ
+preplace netloc xfer_time 1 0 3 NJ 80 NJ 80 800J
+preplace netloc system_reset_peripheral_reset 1 0 1 NJ 220
+preplace netloc bandwidth_test_0_OUT_AXIS 1 0 3 NJ 110 300 60 NJ
+preplace netloc aurora_core_USER_DATA_M_AXIS_RX 1 2 2 780 240 NJ
+preplace netloc GT_DIFF_REFCLK1_0_1 1 0 2 NJ 280 NJ
+preplace netloc aurora_core_GT_SERIAL_TX 1 2 2 NJ 320 NJ
+preplace netloc GT_SERIAL_RX_0_1 1 0 2 NJ 300 NJ
+levelinfo -pg 1 0 160 530 900 1040
+pagesize -pg 1 -db -bbox -sgen -170 0 1230 600
+",
+   "No Loops_ScaleFactor":"1.0",
+   "No Loops_TopLeft":"-215,-89",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port AXI_STREAM_TX -pg 1 -lvl 0 -x 0 -y 240 -defaultsOSRD
+preplace port AXI_STREAM_RX -pg 1 -lvl 4 -x 1000 -y 50 -defaultsOSRD
+preplace port qsfp_clk -pg 1 -lvl 0 -x 0 -y 380 -defaultsOSRD
+preplace port qsfp_tx -pg 1 -lvl 4 -x 1000 -y 20 -defaultsOSRD
+preplace port qsfp_rx -pg 1 -lvl 0 -x 0 -y 420 -defaultsOSRD
+preplace port port-id_channel_up -pg 1 -lvl 4 -x 1000 -y 70 -defaultsOSRD
+preplace port port-id_clock -pg 1 -lvl 0 -x 0 -y 480 -defaultsOSRD
+preplace port port-id_clk -pg 1 -lvl 4 -x 1000 -y 270 -defaultsOSRD
+preplace port port-id_reset_in -pg 1 -lvl 0 -x 0 -y 560 -defaultsOSRD
+preplace portBus sys_reset_out -pg 1 -lvl 4 -x 1000 -y 90 -defaultsOSRD
+preplace portBus probe0 -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
+preplace inst aurora_core -pg 1 -lvl 2 -x 490 -y 420 -defaultsOSRD
+preplace inst reset_inverter -pg 1 -lvl 2 -x 490 -y 150 -defaultsOSRD
+preplace inst stream_signals -pg 1 -lvl 3 -x 850 -y 170 -defaultsOSRD
+preplace inst reset_delay -pg 1 -lvl 1 -x 160 -y 550 -defaultsOSRD
+preplace netloc reset_delay_0_reset_out 1 1 1 290 440n
+preplace netloc reset_inverter_Res 1 2 1 690J 150n
+preplace netloc aurora_core_channel_up1 1 2 2 720J 60 960J
+preplace netloc system_clock_IBUF_OUT 1 0 2 40 480 N
+preplace netloc aurora_core_user_clk_out 1 2 2 750 270 NJ
+preplace netloc aurora_core_sys_reset_out 1 1 3 290 220 740 70 950J
+preplace netloc xfer_time 1 0 3 NJ 210 NJ 210 NJ
+preplace netloc system_reset_peripheral_reset 1 0 1 NJ 560
+preplace netloc bandwidth_test_0_OUT_AXIS 1 0 3 NJ 240 280 90 730J
+preplace netloc aurora_core_USER_DATA_M_AXIS_RX 1 2 2 700 50 NJ
+preplace netloc GT_DIFF_REFCLK1_0_1 1 0 2 NJ 380 NJ
+preplace netloc aurora_core_GT_SERIAL_TX 1 2 2 710J 20 NJ
+preplace netloc GT_SERIAL_RX_0_1 1 0 2 NJ 420 NJ
+levelinfo -pg 1 0 160 490 850 1000
+pagesize -pg 1 -db -bbox -sgen -150 0 1180 610
+"
+}
+

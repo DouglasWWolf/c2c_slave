@@ -1,0 +1,92 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"0.944727",
+   "Default View_TopLeft":"-215,-33",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port m_axi_lite -pg 1 -lvl 0 -x 0 -y 360 -defaultsOSRD -left
+preplace port m_axi -pg 1 -lvl 0 -x 0 -y 340 -defaultsOSRD -left
+preplace port qsfp_clk -pg 1 -lvl 3 -x 920 -y 60 -defaultsOSRD -right
+preplace port qsfp_rx -pg 1 -lvl 3 -x 920 -y 100 -defaultsOSRD -right
+preplace port qsfp_tx -pg 1 -lvl 3 -x 920 -y 80 -defaultsOSRD
+preplace port port-id_aurora_init_clk -pg 1 -lvl 0 -x 0 -y 380 -defaultsOSRD
+preplace port port-id_aurora_pma_init_in -pg 1 -lvl 0 -x 0 -y 460 -defaultsOSRD
+preplace port port-id_m_aresetn -pg 1 -lvl 0 -x 0 -y 440 -defaultsOSRD
+preplace port port-id_channel_up -pg 1 -lvl 3 -x 920 -y 380 -defaultsOSRD
+preplace port port-id_sys_reset_out -pg 1 -lvl 3 -x 920 -y 140 -defaultsOSRD
+preplace port port-id_c2c_link_status -pg 1 -lvl 3 -x 920 -y 360 -defaultsOSRD
+preplace inst axi_chip2chip -pg 1 -lvl 1 -x 250 -y 100 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 53 51 52 50 54 55 56 71 58 65 73 57 67 68 63 66 59 64 61 62 70 69 72 60} -defaultsOSRD -pinDir m_axi left -pinY m_axi 240L -pinDir m_axi_lite left -pinY m_axi_lite 260L -pinDir AXIS_RX right -pinY AXIS_RX 20R -pinDir AXIS_TX right -pinY AXIS_TX 0R -pinDir axi_c2c_lnk_hndlr_in_progress right -pinY axi_c2c_lnk_hndlr_in_progress 360R -pinDir m_aclk left -pinY m_aclk 280L -pinDir m_aresetn left -pinY m_aresetn 340L -pinBusDir axi_c2c_s2m_intr_in left -pinBusY axi_c2c_s2m_intr_in 380L -pinBusDir axi_c2c_m2s_intr_out right -pinBusY axi_c2c_m2s_intr_out 40R -pinDir axi_c2c_phy_clk right -pinY axi_c2c_phy_clk 180R -pinDir axi_c2c_aurora_channel_up right -pinY axi_c2c_aurora_channel_up 200R -pinDir aurora_do_cc right -pinY aurora_do_cc 140R -pinDir aurora_pma_init_in left -pinY aurora_pma_init_in 360L -pinDir aurora_init_clk left -pinY aurora_init_clk 300L -pinDir aurora_pma_init_out right -pinY aurora_pma_init_out 160R -pinDir aurora_mmcm_not_locked right -pinY aurora_mmcm_not_locked 80R -pinDir aurora_reset_pb right -pinY aurora_reset_pb 120R -pinDir axi_c2c_config_error_out right -pinY axi_c2c_config_error_out 340R -pinDir axi_c2c_link_status_out right -pinY axi_c2c_link_status_out 260R -pinDir axi_c2c_multi_bit_error_out right -pinY axi_c2c_multi_bit_error_out 380R -pinDir m_axi_lite_aclk left -pinY m_axi_lite_aclk 320L
+preplace inst c2c_signals -pg 1 -lvl 2 -x 700 -y 440 -swap {3 0 1 2} -defaultsOSRD -pinDir clk left -pinY clk 60L -pinBusDir probe0 left -pinBusY probe0 0L -pinBusDir probe1 left -pinBusY probe1 20L -pinBusDir probe2 left -pinBusY probe2 40L
+preplace inst aurora_core -pg 1 -lvl 2 -x 700 -y 60 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 34 35 36 33 37 38 39 32 40 41 42} -defaultsOSRD -pinDir USER_DATA_S_AXIS_TX left -pinY USER_DATA_S_AXIS_TX 40L -pinDir USER_DATA_M_AXIS_RX left -pinY USER_DATA_M_AXIS_RX 60L -pinDir GT_DIFF_REFCLK1 right -pinY GT_DIFF_REFCLK1 0R -pinDir CORE_STATUS left -pinY CORE_STATUS 80L -pinDir CORE_STATUS.channel_up left -pinY CORE_STATUS.channel_up 100L -pinDir CORE_STATUS.mmcm_not_locked_out left -pinY CORE_STATUS.mmcm_not_locked_out 120L -pinDir CORE_CONTROL left -pinY CORE_CONTROL 140L -pinDir GT_SERIAL_TX right -pinY GT_SERIAL_TX 20R -pinDir GT_SERIAL_RX right -pinY GT_SERIAL_RX 40R -pinDir QPLL_CONTROL_OUT right -pinY QPLL_CONTROL_OUT 60R -pinDir reset_pb left -pinY reset_pb 160L -pinDir pma_init left -pinY pma_init 200L -pinDir tx_out_clk right -pinY tx_out_clk 100R -pinDir init_clk left -pinY init_clk 240L -pinDir link_reset_out right -pinY link_reset_out 120R -pinDir user_clk_out left -pinY user_clk_out 220L -pinDir sync_clk_out right -pinY sync_clk_out 140R -pinDir gt_qpllclk_quad1_out right -pinY gt_qpllclk_quad1_out 160R -pinDir gt_qpllrefclk_quad1_out right -pinY gt_qpllrefclk_quad1_out 180R -pinDir sys_reset_out right -pinY sys_reset_out 80R -pinDir gt_reset_out right -pinY gt_reset_out 200R -pinDir gt_refclk1_out right -pinY gt_refclk1_out 220R -pinBusDir gt_powergood right -pinBusY gt_powergood 240R
+preplace netloc aurora_init_clk_1 1 0 2 20 540 500
+preplace netloc aurora_pma_init_in_1 1 0 1 NJ 460
+preplace netloc m_aresetn_1 1 0 1 NJ 440
+preplace netloc axi_chip2chip_axi_c2c_lnk_hndlr_in_progress 1 1 1 N 460
+preplace netloc axi_chip2chip_axi_c2c_config_error_out 1 1 1 N 440
+preplace netloc axi_chip2chip_axi_c2c_multi_bit_error_out 1 1 1 N 480
+preplace netloc aurora_core_user_clk_out 1 1 1 N 280
+preplace netloc aurora_core_channel_up 1 1 2 480 380 NJ
+preplace netloc aurora_core_sys_reset_out 1 2 1 NJ 140
+preplace netloc axi_chip2chip_aurora_pma_init_out 1 1 1 N 260
+preplace netloc aurora_core_mmcm_not_locked_out 1 1 1 N 180
+preplace netloc axi_chip2chip_aurora_reset_pb 1 1 1 N 220
+preplace netloc axi_chip2chip_axi_c2c_link_status_out1 1 1 2 NJ 360 NJ
+preplace netloc Conn1 1 0 1 NJ 360
+preplace netloc Conn4 1 0 1 NJ 340
+preplace netloc Conn2 1 2 1 NJ 60
+preplace netloc Conn3 1 2 1 NJ 100
+preplace netloc Conn5 1 2 1 NJ 80
+preplace netloc aurora_core_USER_DATA_M_AXIS_RX 1 1 1 N 120
+preplace netloc axi_chip2chip_AXIS_TX 1 1 1 N 100
+levelinfo -pg 1 0 250 700 920
+pagesize -pg 1 -db -bbox -sgen -190 0 1080 560
+",
+   "No Loops_ScaleFactor":"1.0",
+   "No Loops_TopLeft":"-297,-110",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port m_axi_lite -pg 1 -lvl 4 -x 1140 -y 70 -defaultsOSRD
+preplace port m_axi -pg 1 -lvl 4 -x 1140 -y 50 -defaultsOSRD
+preplace port qsfp0_clk -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD
+preplace port qsfp_rx -pg 1 -lvl 0 -x 0 -y 530 -defaultsOSRD
+preplace port qsfp_tx -pg 1 -lvl 4 -x 1140 -y 470 -defaultsOSRD
+preplace port port-id_aurora_init_clk -pg 1 -lvl 0 -x 0 -y 590 -defaultsOSRD
+preplace port port-id_aurora_pma_init_in -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace port port-id_m_aresetn -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_gt_pll_lock_0 -pg 1 -lvl 4 -x 1140 -y 430 -defaultsOSRD
+preplace port port-id_channel_up_0 -pg 1 -lvl 4 -x 1140 -y 130 -defaultsOSRD
+preplace port port-id_link_reset_out -pg 1 -lvl 4 -x 1140 -y 530 -defaultsOSRD
+preplace port port-id_sys_reset_out -pg 1 -lvl 4 -x 1140 -y 630 -defaultsOSRD
+preplace inst axi_chip2chip -pg 1 -lvl 2 -x 650 -y 150 -defaultsOSRD
+preplace inst c2c_signals -pg 1 -lvl 3 -x 1030 -y 240 -defaultsOSRD
+preplace inst aurora_core -pg 1 -lvl 1 -x 220 -y 530 -defaultsOSRD
+preplace netloc aurora_init_clk_1 1 0 3 20 770 420 330 930J
+preplace netloc aurora_pma_init_in_1 1 0 2 NJ 180 NJ
+preplace netloc m_aresetn_1 1 0 2 NJ 100 NJ
+preplace netloc axi_chip2chip_axi_c2c_lnk_hndlr_in_progress 1 2 1 940 110n
+preplace netloc axi_chip2chip_axi_c2c_config_error_out 1 2 1 N 210
+preplace netloc axi_chip2chip_axi_c2c_link_status_out 1 2 1 910 230n
+preplace netloc axi_chip2chip_axi_c2c_multi_bit_error_out 1 2 1 900 250n
+preplace netloc aurora_core_user_clk_out 1 1 1 430 140n
+preplace netloc aurora_core_channel_up 1 1 3 410 320 920J 130 NJ
+preplace netloc aurora_core_gt_pll_lock 1 1 3 NJ 430 NJ 430 NJ
+preplace netloc aurora_core_link_reset_out 1 1 3 NJ 530 NJ 530 NJ
+preplace netloc aurora_core_sys_reset_out 1 1 3 NJ 630 NJ 630 NJ
+preplace netloc axi_chip2chip_aurora_pma_init_out 1 0 3 40 760 NJ 760 890
+preplace netloc aurora_core_mmcm_not_locked_out 1 1 1 440 220n
+preplace netloc axi_chip2chip_aurora_reset_pb 1 0 3 30 750 NJ 750 870
+preplace netloc Conn1 1 2 2 NJ 70 NJ
+preplace netloc Conn4 1 2 2 NJ 50 NJ
+preplace netloc Conn2 1 0 1 NJ 490
+preplace netloc Conn3 1 0 1 NJ 530
+preplace netloc Conn5 1 1 3 NJ 470 NJ 470 NJ
+preplace netloc aurora_core_USER_DATA_M_AXIS_RX 1 1 1 400 60n
+preplace netloc axi_chip2chip_AXIS_TX 1 0 3 40 310 NJ 310 880
+levelinfo -pg 1 0 220 650 1030 1140
+pagesize -pg 1 -db -bbox -sgen -180 0 1290 780
+"
+}
+
