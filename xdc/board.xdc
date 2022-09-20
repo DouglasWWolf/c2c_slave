@@ -74,21 +74,13 @@ set_property PACKAGE_PIN H35 [get_ports qsfp1_tx_txn[0]]
 
 
 
-
-# Disable timing analysis for these pins
-#set_disable_timing [get_ports pb_rst_n        ]
-#set_disable_timing [get_ports ddr4_reset_n    ]
-#set_disable_timing [get_ports led_ddr_cal_done]
-#set_disable_timing [get_ports led_pci_link_up ]
-#set_disable_timing [get_ports led_heartbeat   ]
-
 #######################################
 #  Miscellaneous
 #######################################
 
-set_property  -dict {PACKAGE_PIN B6 IOSTANDARD LVCMOS33} [get_ports pb_rst_n]  ;# PB_SW0
-#set_property  -dict {PACKAGE_PIN A3 IOSTANDARD LVCMOS33} [get_ports pb_sw1  ]  ;# PB_SW1
-#set_property  -dict {PACKAGE_PIN B3 IOSTANDARD LVCMOS33} [get_ports pb_read ] ;# PB_SW2
+ set_property  -dict {PACKAGE_PIN B6 IOSTANDARD LVCMOS33} [get_ports pb_rst_n] ;# PB_SW0
+#set_property  -dict {PACKAGE_PIN A3 IOSTANDARD LVCMOS33} [get_ports pb_sw1  ] ;# PB_SW1
+#set_property  -dict {PACKAGE_PIN B3 IOSTANDARD LVCMOS33} [get_ports pb_sw2  ] ;# PB_SW2
 
 
 
