@@ -19,7 +19,8 @@
       "qsfp_c2c": {
         "axi_chip2chip": "",
         "c2c_signals": "",
-        "aurora_core": ""
+        "aurora_core": "",
+        "c2c_reset_manager": ""
       },
       "qsfp_data": {
         "aurora_core": "",
@@ -502,10 +503,6 @@
             "type": "clk",
             "direction": "I"
           },
-          "aurora_pma_init_in": {
-            "type": "rst",
-            "direction": "I"
-          },
           "channel_up": {
             "direction": "O"
           },
@@ -519,6 +516,10 @@
           "m_aresetn": {
             "type": "rst",
             "direction": "I"
+          },
+          "reset_out": {
+            "type": "rst",
+            "direction": "O"
           }
         },
         "components": {
@@ -679,6 +680,53 @@
                 "value": "Streaming"
               }
             }
+          },
+          "c2c_reset_manager": {
+            "vlnv": "xilinx.com:module_ref:c2c_reset_mgr:1.0",
+            "xci_name": "board_c2c_reset_mgr_0_0",
+            "xci_path": "ip/board_c2c_reset_mgr_0_0/board_c2c_reset_mgr_0_0.xci",
+            "inst_hier_path": "qsfp_c2c/c2c_reset_manager",
+            "reference_info": {
+              "ref_type": "hdl",
+              "ref_name": "c2c_reset_mgr",
+              "boundary_crc": "0x0"
+            },
+            "ports": {
+              "clock": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "FREQ_HZ": {
+                    "value": "100000000",
+                    "value_src": "ip_prop"
+                  },
+                  "CLK_DOMAIN": {
+                    "value": "board_util_ds_buf_0_0_IBUF_OUT",
+                    "value_src": "default_prop"
+                  }
+                }
+              },
+              "reset_in": {
+                "type": "rst",
+                "direction": "I",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_HIGH",
+                    "value_src": "const_prop"
+                  }
+                }
+              },
+              "reset_out": {
+                "type": "rst",
+                "direction": "O",
+                "parameters": {
+                  "POLARITY": {
+                    "value": "ACTIVE_HIGH",
+                    "value_src": "constant"
+                  }
+                }
+              }
+            }
           }
         },
         "interface_nets": {
@@ -742,7 +790,8 @@
           "aurora_core_sys_reset_out": {
             "ports": [
               "aurora_core/sys_reset_out",
-              "sys_reset_out"
+              "sys_reset_out",
+              "c2c_reset_manager/reset_in"
             ]
           },
           "aurora_core_user_clk_out": {
@@ -758,13 +807,8 @@
               "axi_chip2chip/m_axi_lite_aclk",
               "axi_chip2chip/m_aclk",
               "c2c_signals/clk",
-              "aurora_core/init_clk"
-            ]
-          },
-          "aurora_pma_init_in_1": {
-            "ports": [
-              "aurora_pma_init_in",
-              "axi_chip2chip/aurora_pma_init_in"
+              "aurora_core/init_clk",
+              "c2c_reset_manager/clock"
             ]
           },
           "axi_chip2chip_aurora_pma_init_out": {
@@ -826,6 +870,13 @@
                 "value": "true"
               }
             }
+          },
+          "c2c_reset_mgr_0_reset_out": {
+            "ports": [
+              "c2c_reset_manager/reset_out",
+              "axi_chip2chip/aurora_pma_init_in",
+              "reset_out"
+            ]
           },
           "m_aresetn_1": {
             "ports": [
@@ -1336,6 +1387,12 @@
           "c2c_link_status"
         ]
       },
+      "qsfp_c2c_reset_out": {
+        "ports": [
+          "qsfp_c2c/reset_out",
+          "system_reset/aux_reset_in"
+        ]
+      },
       "qsfp_c2c_sys_reset_out": {
         "ports": [
           "qsfp_c2c/sys_reset_out",
@@ -1365,7 +1422,6 @@
       "system_reset_peripheral_reset": {
         "ports": [
           "system_reset/peripheral_reset",
-          "qsfp_c2c/aurora_pma_init_in",
           "qsfp_data/reset_in"
         ]
       },
