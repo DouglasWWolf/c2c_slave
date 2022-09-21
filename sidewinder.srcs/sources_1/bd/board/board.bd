@@ -7,7 +7,8 @@
       "name": "board",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2021.1"
+      "tool_version": "2021.1",
+      "validated": "true"
     },
     "design_tree": {
       "system_clock": "",
@@ -33,13 +34,27 @@
       "clk_100mhz": {
         "mode": "Slave",
         "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
-        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0"
+        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
+        "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          }
+        }
       },
       "qsfp1_clk": {
         "mode": "Slave",
         "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
         "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
         "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "322265625"
           }
@@ -65,6 +80,10 @@
         "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
         "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0",
         "parameters": {
+          "CAN_DEBUG": {
+            "value": "false",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "322265625"
           }
@@ -87,7 +106,17 @@
       },
       "pb_rst_n": {
         "type": "rst",
-        "direction": "I"
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
       },
       "channel_up_1": {
         "direction": "O"
@@ -96,6 +125,10 @@
         "type": "rst",
         "direction": "O",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_HIGH"
           }
@@ -105,6 +138,10 @@
         "type": "rst",
         "direction": "O",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_HIGH"
           }
@@ -1447,8 +1484,8 @@
             "segments": {
               "SEG_axi_gpio_Reg": {
                 "address_block": "/axi_gpio/S_AXI/Reg",
-                "offset": "0x40000000",
-                "range": "64K"
+                "offset": "0x00001000",
+                "range": "4K"
               }
             }
           },
@@ -1456,8 +1493,8 @@
             "segments": {
               "SEG_axi_gpio_Reg": {
                 "address_block": "/axi_gpio/S_AXI/Reg",
-                "offset": "0x40000000",
-                "range": "64K"
+                "offset": "0x00001000",
+                "range": "4K"
               }
             }
           }
